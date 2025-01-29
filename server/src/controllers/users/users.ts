@@ -11,7 +11,7 @@ export const isLoggedOut = (req: Request, res: Response)=> {
       // if(err){
        // res.json({ messege: "cannot logout" });
       // }
-       res.clearCookie('connect.sid').status(200).json({ messege: "cookie cleared successfully" });
+       res.clearCookie('connect.sid', { path: '/' }).status(200).json({ messege: "cookie cleared successfully" });
        //const googleLogoutUrl = `https://accounts.google.com/Logout`;
        //res.redirect(googleLogoutUrl); 
     //})

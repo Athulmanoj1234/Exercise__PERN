@@ -74,7 +74,7 @@ app.use(cookieparser());
 app.use(session({
   secret: "dsfds2454dfgfgfsd454",  // Session secret
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: false, 
   cookie: {
     name: "userToken",  // Custom session cookie name
     httpOnly: true,     // Make cookie inaccessible to JavaScript
@@ -162,7 +162,7 @@ app.get('/auth/google',
 //after user authenticates with google, google will redirect them to the /auth/google/callback
 app.get('/auth/google/callback', 
   passport.authenticate('google', {
-    successRedirect: 'http://localhost:5173/userprofile',
+    successRedirect: 'http://localhost:5173',
     failureRedirect: '/'}), 
 
 );

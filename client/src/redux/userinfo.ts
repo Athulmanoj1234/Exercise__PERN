@@ -1,10 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { url } from "../constants";
 import axios from "axios";
+import { useEffect } from "react";
 
 interface UserDetails {
-    id: string;
-    username: string;
+   id: string;
+   username: string;
+   email: string;
+   profilePhoto: string;
 }
 
 export const userDetails = createAsyncThunk<UserDetails, void>("user/info", 
@@ -16,7 +19,14 @@ export const userDetails = createAsyncThunk<UserDetails, void>("user/info",
 
 //initializing initial user state
 const INITIAL_STATE = {
-    userInfo: {}
+    //userInfo: {}
+    userInfo: {
+        id: "",
+        username: "",
+        email: "",
+        profilePhoto: "",
+      },
+      admin: {} // admin info if you need it
 } 
 
 //creating slice for the user
